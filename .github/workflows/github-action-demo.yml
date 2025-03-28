@@ -7,3 +7,4 @@ jobs:
       - run: echo "The job is running for ${{ github.repository }} repository. "
       - run: echo "The job is running ${{ github.event_name }} event in workflow. "
       - run: echo "The job is running in ${{ runner.os }} Operating system. "
+      - run: echo "The job is running currently in ${{ github.ref }} branch "
