@@ -7,14 +7,16 @@ jobs:
       #- name: "print Repo name"
       - run: echo "Repo is ${{github.repository}} and we are in ${{github.ref}} Branch. "
 
-      #- name: "Take checkout"
-      - uses: actions/checkout@v4
+      - name: "Take checkout"
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - name: "Install latest version of node js"
+        uses: actions/setup-node@v3
         with:
-          node-version: "14"
+          node-version: "latest"
 
-      - run: npm install -g bats
+      - name: "Install bats a testing framework of node js"
+        run: npm install -g bats
       - run: bats -v
 
       - run: npm install -g @angular/cli
