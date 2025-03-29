@@ -1,9 +1,0 @@
-name: github action demo
-on: [push]
-
-jobs:
-  Execute-github-workflows-actions:
-
-    steps: 
-      -run: echo "The job is running for ${{ github.repository }} repository. "
-      -run: echo "The job is running ${{github.event }} event in workflow. "
