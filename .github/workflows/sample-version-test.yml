@@ -3,19 +3,19 @@ on : [push]
 
 jobs:
   pull-from-actions:
-    run-on : ubuntu-latest
+    runs-on : ubuntu-latest
     steps:
       - name : "print Repo name"
-      - echo : "Repo is ${{github.repository}} and we are in ${{github.ref}} Branch. "
+      - run : echo "Repo is ${{github.repository}} and we are in ${{github.ref}} Branch. "
 
-      - name: "Take checkout"
-      - uses: actions/checkout@v4
+      - name : "Take checkout"
+      - uses : actions/checkout@v4
 
-      - uses: actions/setup-node@v3
-        with:
+      - uses : actions/setup-node@v3
+        with :
           node-version: '14'
 
       - run : npm install -g bats
-      - echo : bats -v
+      - run : bats -v
      
   
