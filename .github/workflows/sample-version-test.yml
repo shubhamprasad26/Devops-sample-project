@@ -1,7 +1,7 @@
 name: github action sample version test
 on: [push]
 jobs:
-  pull-from-actions:
+  job1:
     runs-on: ubuntu-latest
     steps:
       #- name: "print Repo name"
@@ -21,3 +21,18 @@ jobs:
 
       - run: npm install -g @angular/cli
       - run: ng v
+
+  job2:
+    runs-on: [push]
+
+    steps:
+      - name: "checkout the repository"
+        uses: actions/checkout@v4
+
+      - name: "give sscripts executable permissions "
+        run: chmod +x ./script1.sh ./script2.sh
+
+      - name: "run both scripts together"
+        run: |
+          ./script1.sh
+          ./script2.sh
