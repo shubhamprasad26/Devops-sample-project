@@ -22,12 +22,8 @@ jobs:
       - run: npm install -g @angular/cli
       - run: ng v
 
-  job2:
-    runs-on: [push]
-
-    steps:
-      - name: "checkout the repository"
-        uses: actions/checkout@v4
+      #- name: "checkout the repository"
+      #  uses: actions/checkout@v4
 
       - name: "give sscripts executable permissions "
         run: chmod +x ./script1.sh ./script2.sh
@@ -36,3 +32,18 @@ jobs:
         run: |
           ./script1.sh
           ./script2.sh
+
+  #job2:
+  #  runs-on: [push]
+
+  # steps:
+  #  - name: "checkout the repository"
+  #   uses: actions/checkout@v4
+
+  #- name: "give sscripts executable permissions "
+  # run: chmod +x ./script1.sh ./script2.sh
+
+  # - name: "run both scripts together"
+  #  run: |
+  #   ./script1.sh
+  #  ./script2.sh
